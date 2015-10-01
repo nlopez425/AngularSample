@@ -1,0 +1,22 @@
+{
+  "name": "TestBower",
+  "version": "0.0.1",
+  "description": "Testing to see how Bower is used",
+  "moduleType": [
+    "globals"
+  ],
+  "authors": [
+    "Noel Lopez"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

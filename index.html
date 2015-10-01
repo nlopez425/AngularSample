@@ -1,0 +1,41 @@
+<html ng-app = "MyApp">
+	<head>
+		<title></title>
+		
+	</head>
+	<body ng-controller = "MainCtrl as Main">
+		<h1>{{Main.message}}</h1>
+
+		<div ng-controller = "AddContactCTRL as Contact">
+			first name: <input type='text' ng-model = 'Contact.firstName'/> <br/><br/>
+			last name: <input type='text' ng-model = 'Contact.lastName'/> <br/><br/>
+			<button ng-click = "Contact.addContactToMemory(Contact.firstName,Contact.lastName)" >Add Contact</button>
+		</div>
+		
+		<div ng-controller = "DisplayContactsCTRL as Contact">
+			<div ng-repeat = "lastName in Contact.list">
+			
+				
+				<div ng-repeat = "test in lastName">
+
+					<div ng-repeat = "person in test">{{person.firstName}} {{person.lastName}}</div>
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="app/app.main.js"></script>
+	<script type="text/javascript" src="app/main.controller.js"></script>
+	<script type="text/javascript" src="app/ManageContacts/manageContacts.module.js"></script>
+	<script type="text/javascript" src="app/ManageContacts/manageContact.factory.js"></script>
+	<script type="text/javascript" src="app/ManageContacts/addContact.controller.js"></script>
+	<script type="text/javascript" src="app/ManageContacts/displayContacts.controller.js"></script>
+</html>
+
+
+
+	
