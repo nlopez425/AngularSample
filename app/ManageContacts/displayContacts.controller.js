@@ -10,6 +10,7 @@
 	function DisplayContactsCTRL (ManageContacts){
 
 		var _this = this;
+		
 		_this.list = ManageContacts.getContacts();
 		_this.subList;
 

@@ -10,6 +10,7 @@
 	function AddContactCTRL (ManageContacts){
 
 		var _this = this;
+		
 		_this.firstName;
 		_this.lastName;
 

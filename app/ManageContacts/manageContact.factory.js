@@ -10,8 +10,8 @@
 
 		function addContactHash(fname,lname){
 
-			var firstLetterLastName = lname[0];
-			var firstLetterFirstName = fname[0];
+			var firstLetterLastName = lname[0].toUpperCase();
+			var firstLetterFirstName = fname[0].toUpperCase();
 
 			var person = {
 				firstName:fname,
