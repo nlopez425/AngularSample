@@ -13,6 +13,9 @@
 		
 		_this.list = ManageContacts.getContacts();
 		_this.subList;
+		_this.filterBy = {
+			lastName:"A"
+		};
 
 		_this.getSubList = function(key){
 			_this.subList = _this.list[key];
@@ -21,6 +24,11 @@
 
 
 		}
+		
+		_this.setFilter = function(letter){
+			_this.filterBy.lastName = letter;
+		}
+		
 		console.log(_this.list);
 		
 	}
