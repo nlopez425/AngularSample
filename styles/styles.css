@@ -1,2 +1,6 @@
 div#display-wrapper{position:relative;}
-div#list-wrapper{position:absolute;left:150px;top:33px;}
+div#list-wrapper{position:absolute;left:285px;top:72px;}
+div#filterList ul{position: relative;display: block;width: 20px;margin-left: 81px;list-style: none;}
+div#filterList ul li.selector-marker{position: absolute;padding:0 5px 4px;top: 0;right: 26px; width: 82px;height: 18px; border: 1px solid #ccc;list-style: none;}
+div#filterList ul li#last_name{left:60px;right: 0;}
+div#filterList ul li.selector-marker.active{border: 2px solid #f00;}

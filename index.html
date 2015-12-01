@@ -14,45 +14,18 @@
 		</div>
 		
 		<div id='display-wrapper' ng-controller = "DisplayContactsCTRL as Contact">
+			<p id='filter-indicator'>filter - First Name: {{Contact.filterBy.firstName}}</p>
 			<p id='filter-indicator'>filter - Last Name: {{Contact.filterBy.lastName}}</p>
-			<div id="filterList">
-				<ul>
-					<li ng-click = Contact.setFilter("A")>A</li>
-					<li ng-click = Contact.setFilter("B")>B</li>
-					<li ng-click = Contact.setFilter("C")>C</li>
-					<li ng-click = Contact.setFilter("D")>D</li>
-					<li ng-click = Contact.setFilter("E")>E</li>
-					<li ng-click = Contact.setFilter("F")>F</li>
-					<li ng-click = Contact.setFilter("G")>G</li>
-					<li ng-click = Contact.setFilter("H")>H</li>
-					<li ng-click = Contact.setFilter("I")>I</li>
-					<li ng-click = Contact.setFilter("J")>J</li>
-					<li ng-click = Contact.setFilter("K")>K</li>
-					<li ng-click = Contact.setFilter("L")>L</li>
-					<li ng-click = Contact.setFilter("M")>M</li>
-					<li ng-click = Contact.setFilter("N")>N</li>
-					<li ng-click = Contact.setFilter("O")>O</li>
-					<li ng-click = Contact.setFilter("P")>P</li>
-					<li ng-click = Contact.setFilter("Q")>Q</li>
-					<li ng-click = Contact.setFilter("R")>R</li>
-					<li ng-click = Contact.setFilter("S")>S</li>
-					<li ng-click = Contact.setFilter("T")>T</li>
-					<li ng-click = Contact.setFilter("U")>U</li>
-					<li ng-click = Contact.setFilter("V")>V</li>
-					<li ng-click = Contact.setFilter("W")>W</li>
-					<li ng-click = Contact.setFilter("X")>X</li>
-					<li ng-click = Contact.setFilter("Y")>Y</li>
-					<li ng-click = Contact.setFilter("Z")>Z</li>
-				</ul>
-			</div>
-			<div id="list-wrapper" ng-repeat = "lastName in Contact.list" >
 			
-				
-				<div  ng-repeat = "list in lastName">
-
-					<div ng-repeat = "person in list | filter:Contact.filterBy">{{person.firstName}} {{person.lastName}}</div>
-
+			<filter-selector></filter-selector>
+			
+			
+				<div id="list-wrapper">
+					<div  ng-repeat = "person in Contact.list | nameFilter:Contact.filterBy">{{person.firstName}} {{person.lastName}}</div>
 				</div>
+				
+
+				
 			</div>
 		</div>
 
@@ -66,6 +39,8 @@
 	<script type="text/javascript" src="app/ManageContacts/manageContact.factory.js"></script>
 	<script type="text/javascript" src="app/ManageContacts/addContact.controller.js"></script>
 	<script type="text/javascript" src="app/ManageContacts/displayContacts.controller.js"></script>
+	<script type="text/javascript" src="app/ManageContacts/filterSelector.directive.js"></script>
+	<script type="text/javascript" src="app/ManageContacts/nameFilter.filter.js"></script>
 </html>
 
 

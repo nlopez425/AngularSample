@@ -5,31 +5,35 @@
 	angular.module('myApp.manageContacts').controller('DisplayContactsCTRL',DisplayContactsCTRL);
 
 
-	DisplayContactsCTRL.$inject = ['ManageContacts'];
+	DisplayContactsCTRL.$inject = ['$scope','ManageContacts'];
 
-	function DisplayContactsCTRL (ManageContacts){
+	function DisplayContactsCTRL ($scope,ManageContacts){
 
 		var _this = this;
 		
 		_this.list = ManageContacts.getContacts();
 		_this.subList;
 		_this.filterBy = {
+			firstName:"A",
 			lastName:"A"
 		};
 
-		_this.getSubList = function(key){
-			_this.subList = _this.list[key];
-			console.log(_this.subList)
-			return JSON.parse(_this.subList);
-
-
-		}
 		
-		_this.setFilter = function(letter){
+		$scope.setFilter_lastName = function(letter){
 			_this.filterBy.lastName = letter;
+			$scope.$apply();
+			
+		}
+
+		$scope.setFilter_firstName = function(letter){
+			_this.filterBy.firstName = letter;
+			$scope.$apply();
 		}
 		
-		console.log(_this.list);
+
+		//append to scope
+		
+		
 		
 	}
 

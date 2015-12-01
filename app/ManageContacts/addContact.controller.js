@@ -16,6 +16,7 @@
 
 		_this.addContactToMemory = function(fname, lname){
 			ManageContacts.addContact(fname,lname);
+			console.log(ManageContacts.getContacts());
 		}
 	}
 
